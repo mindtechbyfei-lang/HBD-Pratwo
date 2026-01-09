@@ -13,17 +13,17 @@
     <!-- 2. CSS Styles -->
     <style>
         :root {
-            --primary-blue: #0ea5e9; /* Sky blue */
-            --soft-blue: #e0f2fe;    /* Very light blue */
-            --blue-glow: #f0f9ff;
+            --primary-pink: #ec4899;
+            --soft-pink: #fce4ec;
+            --purple-glow: #f3e5f5;
         }
 
         body {
             font-family: 'Kanit', sans-serif;
-            background: linear-gradient(135deg, var(--soft-blue) 0%, var(--blue-glow) 100%);
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--purple-glow) 100%);
             min-height: 100vh;
             overflow-x: hidden;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="font-size:20px"><text y="18">💙</text></svg>'), auto;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="font-size:20px"><text y="18">💖</text></svg>'), auto;
         }
 
         .handwritten { font-family: 'Caveat', cursive; }
@@ -54,10 +54,10 @@
             backface-visibility: hidden;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             border-radius: 30px; border: 10px solid white;
-            box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.2);
         }
         .card-front { background: white; }
-        .card-back { background: white; transform: rotateY(-180deg); border-color: #bae6fd; }
+        .card-back { background: white; transform: rotateY(-180deg); border-color: #fbcfe8; }
 
         .decor-item { position: fixed; pointer-events: none; z-index: 0; opacity: 0.4; animation: floating 5s ease-in-out infinite; }
         @keyframes floating {
@@ -76,7 +76,7 @@
             display: flex; align-items: center; gap: 6px; padding: 8px 16px;
             background: white; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .bar { width: 3px; height: 12px; background: var(--primary-blue); animation: barHeight 0.5s infinite alternate; }
+        .bar { width: 3px; height: 12px; background: var(--primary-pink); animation: barHeight 0.5s infinite alternate; }
         @keyframes barHeight { from { height: 4px; } to { height: 14px; } }
 
         .countdown-box {
@@ -99,7 +99,7 @@
         }
 
         .coupon-card {
-            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            background: linear-gradient(135deg, #fb7185 0%, #f43f5e 100%);
             color: white;
             padding: 20px;
             border-radius: 20px;
@@ -117,13 +117,12 @@
     <div id="lock-modal">
         <div class="bg-white p-8 rounded-[2rem] shadow-2xl max-w-xs w-full text-center scale-90 transition-transform duration-300">
             <div class="text-5xl mb-4">🔒</div>
-            <h3 class="text-xl font-bold text-sky-600 mb-2">ยังไม่ถึงเวลาเปิดนะครับ Pratwo!</h3>
-            <p class="text-gray-500 text-sm mb-6">ความลับนี้จะเปิดเผยเมื่อนับถอยหลังสิ้นสุดลงเท่านั้นนะ รออีกนิดนะครับน้องปลาทู 💙</p>
-            <button onclick="document.getElementById('lock-modal').style.display='none'" class="w-full py-3 bg-sky-500 text-white rounded-full font-bold shadow-lg">เข้าใจแย้วว</button>
+            <h3 class="text-xl font-bold text-pink-600 mb-2">ยังไม่ถึงเวลาเปิดนะครับ Pratwo!</h3>
+            <p class="text-gray-500 text-sm mb-6">ความลับนี้จะเปิดเผยเมื่อนับถอยหลังสิ้นสุดลงเท่านั้นนะ รออีกนิดนะครับน้องปลาทู ❤️</p>
+            <button onclick="document.getElementById('lock-modal').style.display='none'" class="w-full py-3 bg-pink-500 text-white rounded-full font-bold shadow-lg">เข้าใจแย้วว</button>
         </div>
     </div>
 
-    <!-- Background Music -->
     <audio id="bg-music" loop preload="auto">
         <source src="THAISUB Wan Feng Gao Bai- Zerinn cover  _  .mp3" type="audio/mpeg">
     </audio>
@@ -134,36 +133,36 @@
             <div class="bar" style="animation-delay: 0.3s"></div>
             <div class="bar" style="animation-delay: 0.5s"></div>
         </div>
-        <span class="text-xs font-medium text-sky-500">Music for P'Pratwo 🎵</span>
+        <span class="text-xs font-medium text-pink-500">Music for P'Pratwo 🎵</span>
     </div>
 
     <!-- หน้า 1: นับถอยหลัง -->
     <section id="page-1" class="page-section active flex-col items-center justify-center min-h-screen p-6">
         <div id="countdown-container" class="mb-12 text-center animate-fade-in">
-            <h3 class="text-sky-500 font-bold mb-4 handwritten text-2xl">Countdown to your day, My Pratwo...</h3>
+            <h3 class="text-pink-500 font-bold mb-4 handwritten text-2xl">Countdown to your day, My Pratwo...</h3>
             <div class="flex gap-3 justify-center">
-                <div class="countdown-box"><span id="days" class="text-2xl font-bold text-sky-600">00</span><p class="text-[10px] text-gray-400">DAYS</p></div>
-                <div class="countdown-box"><span id="hours" class="text-2xl font-bold text-sky-600">00</span><p class="text-[10px] text-gray-400">HOURS</p></div>
-                <div class="countdown-box"><span id="mins" class="text-2xl font-bold text-sky-600">00</span><p class="text-[10px] text-gray-400">MINS</p></div>
-                <div class="countdown-box"><span id="secs" class="text-2xl font-bold text-sky-600">00</span><p class="text-[10px] text-gray-400">SECS</p></div>
+                <div class="countdown-box"><span id="days" class="text-2xl font-bold text-pink-600">00</span><p class="text-[10px] text-gray-400">DAYS</p></div>
+                <div class="countdown-box"><span id="hours" class="text-2xl font-bold text-pink-600">00</span><p class="text-[10px] text-gray-400">HOURS</p></div>
+                <div class="countdown-box"><span id="mins" class="text-2xl font-bold text-pink-600">00</span><p class="text-[10px] text-gray-400">MINS</p></div>
+                <div class="countdown-box"><span id="secs" class="text-2xl font-bold text-pink-600">00</span><p class="text-[10px] text-gray-400">SECS</p></div>
             </div>
         </div>
 
         <div class="text-center mb-10">
-            <h2 class="text-sky-600 font-bold text-3xl animate-bounce mb-2">Special Delivery for "Pratwo"! 📮</h2>
-            <p class="text-sky-400">จดหมายลับถึงน้องปลาทู</p>
+            <h2 class="text-pink-600 font-bold text-3xl animate-bounce mb-2">Special Delivery for "Pratwo"! 📮</h2>
+            <p class="text-pink-400">จดหมายลับถึงน้องปลาทู</p>
         </div>
         
         <div class="card-container" onclick="App.handleCardClick()">
             <div id="main-card" class="card-inner">
                 <div class="card-face card-front">
                     <div class="text-8xl mb-4">💌</div>
-                    <p class="text-sky-400 font-bold text-2xl handwritten">To: Pratwo</p>
+                    <p class="text-pink-400 font-bold text-2xl handwritten">To: Pratwo</p>
                 </div>
                 <div class="card-face card-back p-10 text-center">
-                    <h3 class="text-3xl font-bold text-sky-600 mb-6 handwritten">Ready, Pratwo?</h3>
+                    <h3 class="text-3xl font-bold text-pink-600 mb-6 handwritten">Ready, Pratwo?</h3>
                     <p class="text-gray-500 mb-8">ขอบคุณที่กดเข้ามาดูนะ อ้วน<br>จะมีอะไรอยู่ข้างในนี้นะ...</p>
-                    <button class="px-8 py-3 bg-sky-500 text-white rounded-full shadow-lg font-medium">เปิดเลยย ✨</button>
+                    <button class="px-8 py-3 bg-pink-500 text-white rounded-full shadow-lg font-medium">เปิดเลยย ✨</button>
                 </div>
             </div>
         </div>
@@ -173,21 +172,21 @@
     <section id="page-2" class="page-section flex-col items-center justify-center min-h-screen p-6">
         <div class="w-full max-w-sm p-12 glass-morphism rounded-[3rem] shadow-2xl text-center">
             <div class="text-6xl mb-6">🔐</div>
-            <h2 class="text-2xl font-bold text-sky-600 mb-2">Private Access</h2>
-            <p class="text-sky-400/70 mb-8 text-sm italic">น้องปลาทูยืนยันตัวตนหน่อยครับ 💙</p>
-            <input type="text" id="pin-display" readonly class="w-full text-center text-5xl font-bold bg-transparent border-b-4 border-sky-300 py-4 text-sky-600 outline-none mb-8 tracking-[0.4em]" placeholder="••••">
+            <h2 class="text-2xl font-bold text-pink-600 mb-2">Private Access</h2>
+            <p class="text-pink-400/70 mb-8 text-sm italic">น้องปลาทูยืนยันตัวตนหน่อยครับ ❤️</p>
+            <input type="text" id="pin-display" readonly class="w-full text-center text-5xl font-bold bg-transparent border-b-4 border-pink-300 py-4 text-pink-600 outline-none mb-8 tracking-[0.4em]" placeholder="••••">
             <div class="grid grid-cols-3 gap-4" id="keypad"></div>
-            <p id="error-msg" class="text-red-500 mt-6 text-sm opacity-0">รหัสไม่ถูกนะอ้วน ลองใหม่นะครับ 💙</p>
+            <p id="error-msg" class="text-red-500 mt-6 text-sm opacity-0">รหัสไม่ถูกนะอ้วน ลองใหม่นะครับ ❤️</p>
         </div>
     </section>
 
     <!-- หน้า 3: Love Stats -->
     <section id="page-3" class="page-section flex-col items-center justify-center min-h-screen p-6">
-        <h2 class="text-4xl font-bold text-sky-600 mb-2 handwritten text-center">Love Stats for "Pratwo"</h2>
-        <p class="text-sky-400 mb-12 italic">วิเคราะห์ความรักที่มีให้น้องปลาทู</p>
+        <h2 class="text-4xl font-bold text-pink-600 mb-2 handwritten text-center">Love Stats for "Pratwo"</h2>
+        <p class="text-pink-400 mb-12 italic">วิเคราะห์ความรักที่มีให้น้องปลาทู</p>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-4xl">
             <div class="score-card bg-white/80 p-6 rounded-[2.5rem] shadow-lg text-center flex flex-col items-center transition-all hover:scale-105">
-                <div class="text-sky-500 font-bold text-3xl mb-1"><span class="counter" data-target="1000000">0</span>%</div>
+                <div class="text-pink-500 font-bold text-3xl mb-1"><span class="counter" data-target="1000000">0</span>%</div>
                 <p class="text-gray-500 text-[10px] md:text-xs">ความอยากกอด Pratwo</p>
             </div>
             <div class="score-card bg-white/80 p-6 rounded-[2.5rem] shadow-lg text-center flex flex-col items-center transition-all hover:scale-105">
@@ -203,101 +202,89 @@
                 <p class="text-gray-500 text-[10px] md:text-xs">ความซื่อสัตย์ที่มีให้ Pratwo</p>
             </div>
             <div class="score-card bg-white/80 p-6 rounded-[2.5rem] shadow-lg text-center flex flex-col items-center transition-all hover:scale-105">
-                <div class="text-indigo-500 font-bold text-3xl mb-1"><span class="counter" data-target="888888">0</span>%</div>
+                <div class="text-purple-500 font-bold text-3xl mb-1"><span class="counter" data-target="888888">0</span>%</div>
                 <p class="text-gray-500 text-[10px] md:text-xs">ความอยากอยู่ใกล้ๆ</p>
             </div>
             <div class="score-card bg-white/80 p-6 rounded-[2.5rem] shadow-lg text-center flex flex-col items-center transition-all hover:scale-105">
-                <div class="text-sky-600 font-bold text-3xl mb-1">Forever</div>
+                <div class="text-red-500 font-bold text-3xl mb-1">Forever</div>
                 <p class="text-gray-500 text-[10px] md:text-xs">ระยะเวลาที่จะรัก Pratwo</p>
             </div>
         </div>
         <div id="stat-loader" class="mt-10 w-full max-w-xs h-2 bg-gray-200 rounded-full overflow-hidden">
-            <div id="stat-progress" class="h-full bg-sky-500 transition-all duration-[2000ms] w-0"></div>
+            <div id="stat-progress" class="h-full bg-pink-500 transition-all duration-[2000ms] w-0"></div>
         </div>
-        <button id="stat-next-btn" onclick="App.nextPage(4)" class="mt-8 px-10 py-4 bg-sky-500 text-white rounded-full shadow-xl font-bold opacity-0 translate-y-4 transition-all duration-500 pointer-events-none">ความทรงจำของเรา 📸</button>
+        <button id="stat-next-btn" onclick="App.nextPage(4)" class="mt-8 px-10 py-4 bg-pink-500 text-white rounded-full shadow-xl font-bold opacity-0 translate-y-4 transition-all duration-500 pointer-events-none">ความทรงจำของเรา 📸</button>
     </section>
 
     <!-- หน้า 4: Memories -->
     <section id="page-4" class="page-section flex-col items-center min-h-screen py-20 px-6">
-        <h2 class="text-5xl md:text-7xl font-bold text-sky-500 handwritten mb-12 text-center">Sweet Memories with "Pratwo"</h2>
+        <h2 class="text-5xl md:text-7xl font-bold text-pink-500 handwritten mb-12 text-center">Sweet Memories with "Pratwo"</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
             <div class="memory-card bg-white p-4 rounded-3xl shadow-xl transform hover:rotate-2 transition-transform">
-                <div class="aspect-square bg-sky-50 rounded-2xl overflow-hidden">
-                    <img src="1.jpg" class="w-full h-full object-cover" alt="Memory 1" onerror="this.src='https://via.placeholder.com/400?text=Memory+1'">
-                </div>
-                <p class="mt-4 text-sky-600 font-bold handwritten text-xl text-center">คนสวย Pratwo 🌸</p>
+                <div class="aspect-square bg-pink-50 rounded-2xl overflow-hidden"><img src="1.jpg" class="w-full h-full object-cover"></div>
+                <p class="mt-4 text-pink-600 font-bold handwritten text-xl text-center">คนสวย Pratwo 🌸</p>
             </div>
             <div class="memory-card bg-white p-4 rounded-3xl shadow-xl transform hover:-rotate-2 transition-transform">
-                <div class="aspect-square bg-sky-50 rounded-2xl overflow-hidden">
-                    <img src="2.jpg" class="w-full h-full object-cover" alt="Memory 2" onerror="this.src='https://via.placeholder.com/400?text=Memory+2'">
-                </div>
-                <p class="mt-4 text-sky-600 font-bold handwritten text-xl text-center">รอยยิ้มของน้องปลาทู ✨</p>
+                <div class="aspect-square bg-pink-50 rounded-2xl overflow-hidden"><img src="2.jpg" class="w-full h-full object-cover"></div>
+                <p class="mt-4 text-pink-600 font-bold handwritten text-xl text-center">รอยยิ้มของน้องปลาทู ✨</p>
             </div>
             <div class="memory-card bg-white p-4 rounded-3xl shadow-xl transform hover:rotate-1 transition-transform">
-                <div class="aspect-square bg-sky-50 rounded-2xl overflow-hidden">
-                    <img src="3.jpg" class="w-full h-full object-cover" alt="Memory 3" onerror="this.src='https://via.placeholder.com/400?text=Memory+3'">
-                </div>
-                <p class="mt-4 text-sky-600 font-bold handwritten text-xl text-center">น่ารัก 🍦</p>
+                <div class="aspect-square bg-pink-50 rounded-2xl overflow-hidden"><img src="3.jpg" class="w-full h-full object-cover"></div>
+                <p class="mt-4 text-pink-600 font-bold handwritten text-xl text-center">น่ารัก 🍦</p>
             </div>
             <div class="memory-card bg-white p-4 rounded-3xl shadow-xl transform hover:-rotate-1 transition-transform">
-                <div class="aspect-square bg-sky-50 rounded-2xl overflow-hidden">
-                    <img src="4.jpg" class="w-full h-full object-cover" alt="Memory 4" onerror="this.src='https://via.placeholder.com/400?text=Memory+4'">
-                </div>
-                <p class="mt-4 text-sky-600 font-bold handwritten text-xl text-center">ขอบคุณที่อยู่ข้างกันนะ Pratwo 🧸</p>
+                <div class="aspect-square bg-pink-50 rounded-2xl overflow-hidden"><img src="4.jpg" class="w-full h-full object-cover"></div>
+                <p class="mt-4 text-pink-600 font-bold handwritten text-xl text-center">ขอบคุณที่อยู่ข้างกันนะ Pratwo 🧸</p>
             </div>
             <div class="memory-card bg-white p-4 rounded-3xl shadow-xl transform hover:rotate-3 transition-transform">
-                <div class="aspect-square bg-sky-50 rounded-2xl overflow-hidden">
-                    <img src="5.jpg" class="w-full h-full object-cover" alt="Memory 5" onerror="this.src='https://via.placeholder.com/400?text=Memory+5'">
-                </div>
-                <p class="mt-4 text-sky-600 font-bold handwritten text-xl text-center">กำลังใจของเค้า 💙</p>
+                <div class="aspect-square bg-pink-50 rounded-2xl overflow-hidden"><img src="5.jpg" class="w-full h-full object-cover"></div>
+                <p class="mt-4 text-pink-600 font-bold handwritten text-xl text-center">กำลังใจของเค้า 💖</p>
             </div>
             <div class="memory-card bg-white p-4 rounded-3xl shadow-xl transform hover:-rotate-3 transition-transform">
-                <div class="aspect-square bg-sky-50 rounded-2xl overflow-hidden">
-                    <img src="6.jpg" class="w-full h-full object-cover" alt="Memory 6" onerror="this.src='https://via.placeholder.com/400?text=Memory+6'">
-                </div>
-                <p class="mt-4 text-sky-600 font-bold handwritten text-xl text-center">รักมากที่สุดเลยยย 🌹</p>
+                <div class="aspect-square bg-pink-50 rounded-2xl overflow-hidden"><img src="6.jpg" class="w-full h-full object-cover"></div>
+                <p class="mt-4 text-pink-600 font-bold handwritten text-xl text-center">รักมากที่สุดเลยยย 🌹</p>
             </div>
         </div>
-        <button onclick="App.nextPage(5)" class="mt-20 px-10 py-4 bg-white text-sky-500 rounded-full shadow-xl font-bold">ความในใจ... 🎈</button>
+        <button onclick="App.nextPage(5)" class="mt-20 px-10 py-4 bg-white text-pink-500 rounded-full shadow-xl font-bold">ความในใจ... 🎈</button>
     </section>
 
     <!-- หน้า 5: Messages -->
     <section id="page-5" class="page-section flex-col items-center justify-center min-h-screen p-6 text-center">
-        <h2 class="text-4xl font-bold text-sky-600 mb-10 handwritten">Message for "น้องปลาทู"</h2>
+        <h2 class="text-4xl font-bold text-pink-600 mb-10 handwritten">Message for "น้องปลาทู"</h2>
         <div class="space-y-6 max-w-md w-full">
-            <div class="glass-morphism p-6 rounded-2xl shadow-md border-l-8 border-sky-400"><p class="text-gray-700 italic">"ปลาทู รู้มั้ยว่าพี่รัก ปลาทู ที่สุดเลยนะ"</p></div>
-            <div class="glass-morphism p-6 rounded-2xl shadow-md border-r-8 border-sky-300"><p class="text-gray-700 italic">"ขอบคุณที่คอยซัพพอร์ตกันเสมอมานะ อ้วน"</p></div>
-            <div class="glass-morphism p-6 rounded-2xl shadow-md border-l-8 border-sky-200"><p class="text-gray-700 italic">"ขอให้ปีนี้ของ อ้วน มีแต่เรื่องดีๆ ติดมหาลัยที่หวัง นะครับ"</p></div>
+            <div class="glass-morphism p-6 rounded-2xl shadow-md border-l-8 border-pink-400"><p class="text-gray-700 italic">"ปลาทู รู้มั้ยว่าพี่รัก ปลาทู ที่สุดเลยนะ"</p></div>
+            <div class="glass-morphism p-6 rounded-2xl shadow-md border-r-8 border-pink-300"><p class="text-gray-700 italic">"ขอบคุณที่คอยซัพพอร์ตกันเสมอมานะ อ้วน"</p></div>
+            <div class="glass-morphism p-6 rounded-2xl shadow-md border-l-8 border-pink-200"><p class="text-gray-700 italic">"ขอให้ปีนี้ของ อ้วน มีแต่เรื่องดีๆ ติดมหาลัยที่หวัง นะครับ"</p></div>
         </div>
-        <button onclick="App.nextPage(6)" class="mt-12 px-10 py-4 bg-sky-500 text-white rounded-full shadow-xl font-bold animate-pulse">ของขวัญสุดท้าย... 🎁</button>
+        <button onclick="App.nextPage(6)" class="mt-12 px-10 py-4 bg-pink-500 text-white rounded-full shadow-xl font-bold animate-pulse">ของขวัญสุดท้าย... 🎁</button>
     </section>
 
     <!-- หน้า 6: Happy Birthday & Coupons -->
     <section id="page-6" class="page-section flex-col items-center min-h-screen py-20 px-6">
-        <h2 class="text-5xl md:text-6xl font-bold text-sky-500 handwritten mb-12 text-center">Happy Birthday Pratwo!</h2>
+        <h2 class="text-5xl md:text-6xl font-bold text-pink-500 handwritten mb-12 text-center">Happy Birthday Pratwo!</h2>
         <article class="glass-morphism p-10 md:p-16 rounded-[4rem] shadow-inner mb-20 border-4 border-white max-w-3xl mx-auto relative">
             <p id="typed-message" class="text-gray-700 text-xl leading-loose font-light"></p>
         </article>
         
         <div id="final-gift-section" class="text-center w-full max-w-md">
             <div id="gift-icon" class="text-9xl mb-4 cursor-pointer hover:scale-110 transition-transform" onclick="App.revealGift()">🎁</div>
-            <p id="gift-text" class="text-sky-400 font-bold text-xl animate-pulse handwritten">แตะกล่องของขวัญเพื่อรับคูปองนะ Pratwo</p>
+            <p id="gift-text" class="text-pink-400 font-bold text-xl animate-pulse handwritten">แตะกล่องของขวัญเพื่อรับคูปองนะ Pratwo</p>
             
             <div id="gift-content" class="hidden opacity-0 scale-90 transition-all duration-700 mt-10">
-                <h4 class="text-sky-600 font-bold text-2xl mb-6 handwritten">Love Coupons for "Pratwo" 🎫</h4>
+                <h4 class="text-pink-600 font-bold text-2xl mb-6 handwritten">Love Coupons for "Pratwo" 🎫</h4>
                 <div class="coupon-card">
                     <p class="font-bold">คูปองตามใจแฟน 1 วันเต็ม</p>
                     <p class="text-xs opacity-80">ใช้ตอนไหนก็ได้</p>
                 </div>
-                <div class="coupon-card" style="background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);">
+                <div class="coupon-card" style="background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);">
                     <p class="font-bold">คูปองพาไปกินของอร่อย 1 มื้อ</p>
                     <p class="text-xs opacity-80">เลือกร้านที่ Pratwo อยากไปได้เลย</p>
                 </div>
-                <div class="coupon-card" style="background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);">
+                <div class="coupon-card" style="background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);">
                     <p class="font-bold">คูปองนวดแก้เมื่อยให้น้องปลาทู</p>
                     <p class="text-xs opacity-80">นวดจนกว่า ปลาทู จะหายเมื่อยเลยครับ</p>
                 </div>
-                <p class="text-sky-400 mt-6 italic text-sm">#แคปเพื่อเป็นหลักฐาน</p>
+                <p class="text-pink-400 mt-6 italic text-sm">#แคปเพื่อเป็นหลักฐาน</p>
             </div>
         </div>
     </section>
@@ -321,6 +308,11 @@
                 this.startCountdown();
             },
 
+            checkTimeStatus() {
+                const now = new Date().getTime();
+                return now >= Config.TargetDate.getTime();
+            },
+
             startCountdown() {
                 const update = () => {
                     const now = new Date().getTime();
@@ -334,7 +326,7 @@
                         document.getElementById('secs').innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
                     } else {
                         this.isLocked = false;
-                        document.getElementById('countdown-container').innerHTML = "<h3 class='text-sky-600 font-bold text-2xl handwritten animate-bounce'>Happy Birthday Pratwo! 🎉</h3>";
+                        document.getElementById('countdown-container').innerHTML = "<h3 class='text-pink-600 font-bold text-2xl handwritten animate-bounce'>Happy Birthday Pratwo! 🎉</h3>";
                     }
                 };
                 update();
@@ -359,11 +351,11 @@
             renderKeypad() {
                 const keypad = document.getElementById('keypad');
                 for(let i=1; i<=9; i++) {
-                    keypad.innerHTML += `<button onclick="App.appendPin('${i}')" class="bg-white/70 hover:bg-sky-100 py-5 rounded-2xl font-bold text-xl text-sky-600 border border-white transition-all">${i}</button>`;
+                    keypad.innerHTML += `<button onclick="App.appendPin('${i}')" class="bg-white/70 hover:bg-pink-100 py-5 rounded-2xl font-bold text-xl text-pink-600 border border-white transition-all">${i}</button>`;
                 }
                 keypad.innerHTML += `<button onclick="App.clearPin()" class="bg-red-50 py-5 rounded-2xl font-bold text-red-400">C</button>`;
-                keypad.innerHTML += `<button onclick="App.appendPin('0')" class="bg-white/70 py-5 rounded-2xl font-bold text-xl text-sky-600">0</button>`;
-                keypad.innerHTML += `<button onclick="App.checkPin()" class="bg-sky-500 py-5 rounded-2xl font-bold text-white shadow-lg">OK</button>`;
+                keypad.innerHTML += `<button onclick="App.appendPin('0')" class="bg-white/70 py-5 rounded-2xl font-bold text-xl text-pink-600">0</button>`;
+                keypad.innerHTML += `<button onclick="App.checkPin()" class="bg-pink-500 py-5 rounded-2xl font-bold text-white shadow-lg">OK</button>`;
             },
 
             nextPage(pageNum) {
@@ -421,7 +413,7 @@
             },
             checkPin() {
                 if (this.currentPin === Config.PIN) {
-                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#0ea5e9', '#38bdf8', '#ffffff'] });
+                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
                     this.nextPage(3);
                 } else {
                     document.getElementById('error-msg').style.opacity = '1';
@@ -444,7 +436,7 @@
             },
 
             revealGift() {
-                confetti({ particleCount: 200, spread: 100, origin: { y: 0.8 }, colors: ['#0ea5e9', '#38bdf8', '#ffffff'] });
+                confetti({ particleCount: 200, spread: 100, origin: { y: 0.8 } });
                 document.getElementById('gift-icon').innerHTML = '🎊';
                 document.getElementById('gift-text').style.display = 'none';
                 const content = document.getElementById('gift-content');
@@ -457,7 +449,7 @@
 
             createDecor() {
                 const layer = document.getElementById('decor-layer');
-                const items = ['✨', '☁️', '🎈', '💙', '❄️', '🐟'];
+                const items = ['✨', '🌸', '🎈', '💖', '☁️', '🐟'];
                 for (let i = 0; i < 30; i++) {
                     const el = document.createElement('div');
                     el.className = 'decor-item';
